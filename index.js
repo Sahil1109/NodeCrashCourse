@@ -1,4 +1,6 @@
-const person=require('./person') //commom JS
+const Logger = require('./logger');
+const logger = new Logger();
 
-const person1 = new person('Sahil', 22)
-person1.greetings();
+logger.on('message', (data)=>console.log('Called Listener:',data));
+
+logger.log('Hello world')
